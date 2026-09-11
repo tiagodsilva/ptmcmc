@@ -38,7 +38,7 @@ ax_rw.scatter(xs_rw[:, 0], xs_rw[:, 1])
 ax_rw.set_title("Random Walk")
 
 ax_pt.scatter(xs_pt[:, 0], xs_pt[:, 1])
-ax_rw.set_title("Random Walk with PT")
+ax_pt.set_title("Random Walk with PT")
 
 plt.tight_layout()
 
