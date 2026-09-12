@@ -23,7 +23,6 @@ xs_rw = xs_rw.reshape(-1, D)
 
 xs_pt = pt_random_walk(
     x,
-    beta=jnp.logspace(-10, 0, endpoint=True, num=N, base=2),
     logp=logp,
     steps=int(1e5),
     sigma=0.15,
