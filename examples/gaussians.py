@@ -8,7 +8,7 @@ from ptmcmc.mh import pt_random_walk, random_walk
 from ptmcmc.tgts import GaussianMixture2D
 from ptmcmc.utils import show_kitty
 
-logp = GaussianMixture2D(a=0.5, sigma=5e-2)
+logp = GaussianMixture2D(a=0.5, sigma=1e-2)
 
 N = 32
 D = 2
