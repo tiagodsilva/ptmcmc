@@ -16,3 +16,18 @@ class GaussianMixture2D:
             axis=0,
         )
         return logp
+
+
+class Rings2D:
+    def __init__(self, r1: float, r2: float, w1: float, sigma: float):
+        self.r1 = r1
+        self.r2 = r2
+        self.ws = jnp.array([w1, 1 - w1])
+
+        self.sigma = sigma
+
+    def __call__(self, x: jax.Array):
+        x_norm = jnp.linalg.norm(x)
+        dists = jnp.array([(x_norm - self.r1) ** 2, (x_norm - self.r2) ** 2])
+
+        return jax.nn.logsumexp(-dists / self.sigma**2, b=self.ws, axis=0)
